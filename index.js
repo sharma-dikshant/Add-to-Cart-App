@@ -21,6 +21,10 @@ const shoppingListEl = document.getElementById("shopping-list");
 
 addBtn.addEventListener("click", () => {
   const item = inputFieldEl.value.trim();
+  if(item === ''){
+    alert('Please enter an item');
+    return;
+  }
   push(shoppingListInDB, item);
   console.log(item);
   clearInputField();
@@ -39,7 +43,7 @@ onValue(shoppingListInDB, (snapshot) => {
       appendNewItem(currentItem);
     }
   } else {
-    shoppingListEl.innerHTML = "no item";
+    shoppingListEl.innerHTML = `<li>No Items</li>`;
   }
 });
 
