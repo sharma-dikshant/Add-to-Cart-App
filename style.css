@@ -1,0 +1,126 @@
+/* style.css */
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+#input-container {
+    position: fixed;
+    top: 20px;
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#input-field {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+#input-field:focus {
+    border-color: #007bff;
+}
+
+#add-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#add-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#shopping-list-container {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 400px;
+    overflow-y: auto;
+    height: calc(100vh - 100px); /* Adjust based on the height of fixed elements and padding */
+}
+
+#shopping-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+#shopping-list li {
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#shopping-list li:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#shopping-list li button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#shopping-list li button:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+    #input-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #input-field, #add-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #add-button {
+        margin-left: 0;
+    }
+
+    #shopping-list-container {
+        width: 100%;
+    }
+}
