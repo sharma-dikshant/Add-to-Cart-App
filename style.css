@@ -1,126 +1,124 @@
 /* style.css */
-
-/* General reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    background-color: #f7f7f7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e9f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-#input-container {
-    position: fixed;
-    top: 20px;
-    display: flex;
-    width: 100%;
-    max-width: 400px;
-    justify-content: center;
-    gap: 10px;
-    background-color: #f7f7f7;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+#auth-container, #input-container, #shopping-list-container {
+  background: linear-gradient(135deg, #72edf2, #5151e5);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 80%;
+  color: white;
 }
 
-#input-field {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    transition: border-color 0.3s ease;
+.image img{
+  max-width: 100px;
+  padding: 5px;
 }
 
-#input-field:focus {
-    border-color: #007bff;
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-size: 1rem;
 }
 
-#add-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff6f61;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-#add-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-#shopping-list-container {
-    margin-top: 70px;
-    width: 100%;
-    max-width: 400px;
-    overflow-y: auto;
-    height: calc(100vh - 100px); /* Adjust based on the height of fixed elements and padding */
+button:hover {
+  background-color: #ff5a4a;
+  transform: translateY(-2px);
 }
 
 #shopping-list {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
 }
 
 #shopping-list li {
-    padding: 15px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+  /* position: relative; */
+}
+
+#shopping-list li:nth-child(even) {
+  transform: translateX(10px);
+}
+
+#shopping-list li:nth-child(odd) {
+  transform: translateX(-10px);
 }
 
 #shopping-list li:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff3e0;
+  transform: scale(1.05);
 }
 
 #shopping-list li button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #dc3545;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: black;
+  text-align: right;
+  position: absolute;
+  right: 10px;
+   top: 40%; /*Center vertically */
+  transform: translateY(-50%); /* Adjust vertical positioning */
+  background: none;
+  border: none;
+  color: #ff6f61;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
 }
 
-#shopping-list li button:hover {
-    background-color: #c82333;
+#logout-button {
+  display: none;
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  background-color: #dc3545;
 }
 
-@media (max-width: 600px) {
-    #input-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #input-field, #add-button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    #add-button {
-        margin-left: 0;
-    }
-
-    #shopping-list-container {
-        width: 100%;
-    }
+@media (min-width: 768px) {
+  #auth-container, #input-container, #shopping-list-container {
+    max-width: 600px;
+  }
 }
