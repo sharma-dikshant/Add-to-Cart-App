@@ -11,13 +11,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="input-container">
+    <div class="image">
+      <img src="assets/3087280.jpg">
+    </div>
+    <div id="auth-container">
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="signup-button">Sign Up</button>
+      <button id="login-button">Log In</button>
+
+    </div>
+    <div id="input-container" style="display: none;">
       <input type="text" id="input-field" placeholder="bread" />
       <button id="add-button">Add to Cart</button>
     </div>
-    <div id="shopping-list-container">
+    <div id="shopping-list-container" style="display: none;">
       <ul id="shopping-list"></ul>
     </div>
+    <button id="logout-button">Log Out</button>
     <script src="./credentials/credentials.js" type="module"></script>
     <script src="index.js" type="module"></script>
   </body>
